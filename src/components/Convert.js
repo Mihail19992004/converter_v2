@@ -5,7 +5,7 @@ export function Convert({
   length, user,
   setFirst,
   setValueLeftBar,
-    strory,
+    story,
     setStory,
   valueLeftBar,
 }) {
@@ -24,7 +24,14 @@ export function Convert({
     console.log(state);
   }, []);
  async  function startConvert() {
+    const history = {
+         to: state[1].Name,
+             from: secondState[1].Name,
+             value: firsInput,
+             result: +((firsInput * state[1].Value) / (+secondState[1].Value)).toFixed(2),
+             date: Date.now()
 
+     }
     console.log(state[1].Value);
     console.log(secondState[1].Value);
     setResult(+((firsInput * state[1].Value) / (+secondState[1].Value)).toFixed(2));
@@ -47,8 +54,9 @@ export function Convert({
                  }
              })
          })
-         const dt = await res.text()
-         setStory(JSON.parse(dt).history)
+
+         setStory([...story, history])
+         console.log(story)
      }
 
   }

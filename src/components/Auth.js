@@ -75,18 +75,18 @@ export function Auth({user, setUser, isAuth, setIsAuth,story,setStory}) {
                                              story?.length && story.map(e=> (
                                                  <div className='log-history'>
                                                      <div className="left-valute">
-                                                         <p>Изначальная валюта</p>
-                                                         <p>{e.from}</p>
+                                                         <p>Желаемая валюта</p>
+                                                         <p>{e.to}</p>
                                                          <p>Изначальное значение</p>
                                                          <p>{e.value}</p>
                                                      </div>
                                                      <div className="right-valute">
-                                                         <p>Желаемая валюта</p>
-                                                         <p>{e.to}</p>
+                                                         <p>Изначальная валюта</p>
+                                                         <p>{e.from}</p>
                                                          <p>Конечное значение</p>
                                                          <p>{e.result}</p>
                                                          <p>Дата</p>
-                                                         <p>{e.date ? e.date : 'пока что нет даты'}</p>
+                                                         <p>{e.date ? new Date(e.date).toString() : 'пока что нет даты'}</p>
                                                      </div>
 
                                                  </div>
